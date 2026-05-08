@@ -195,7 +195,8 @@
     text-align: center; padding: 16px;
   }
   .project .body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
-  .project .badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .project .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .project .badges .badge + .badge { margin-left: 0; }
   .project .badge {
     font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
     text-transform: uppercase; letter-spacing: 0.1em;
@@ -272,7 +273,7 @@
     </p>
     <div class="cta-row">
       <a class="btn primary" href="#projects">View 10 projects</a>
-      <a class="btn" href="resume.pdf" download>Download resume</a>
+      <a class="btn" href="resume.pdf" download>Download résumé</a>
       <a class="btn" href="#contact">Get in touch</a>
     </div>
   </div>
@@ -286,13 +287,13 @@
     <div class="about">
       <div>
         <p>
-          I just finished my <strong>Electromechanical Engineering Technology — Automation</strong> diploma at Seneca Polytechnic. My capstone is a <strong>filling, capping, and sorting system</strong> driven by a CLICK PLC and monitored over MQTT through a Node-RED dashboard.
+          I just finished my <strong>Electromechanical Engineering Technology — Automation</strong> Advanced diploma at Seneca Polytechnic. My capstone is a <strong>filling, capping, and sorting system</strong> driven by a CLICK PLC and monitored over MQTT through a Node-RED dashboard.
         </p>
         <p>
           Across the program I worked with <strong>Allen-Bradley CompactLogix in Studio 5000</strong> (master/slave, PID, FIFO/LIFO), <strong>Siemens S7-1200/1500 in TIA Portal</strong> (washing machine, elevator, traffic light + pedestrian crosswalk, Festo MPS), <strong>KUKA robots in KRL + WorkVisual</strong>, and <strong>Siemens NX with MCD</strong> for digital-twin validation. I designed and etched a custom <strong>variable-voltage power supply PCB</strong> in PADS, machined parts on <strong>HAAS mills with Mastercam</strong>, and built <strong>Node-RED + MQTT + Modbus</strong> bridges. I'm also trained in <strong>BACnet, HVAC controls (AHU/VAV/DDC), and Kantech access control</strong>, and I currently work shift-based monitoring at a commercial security operations role.
         </p>
         <p>
-          Open to full-time roles in <strong>PLC programming, automation technician, controls engineering, field service, and maintenance</strong> — also happy to take on building-automation work where it fits. Comfortable with shift work, on-call rotations, and physical site work. On-site, hybrid, remote, or relocation across Canada all on the table. Working toward my <strong>OACETT C.E.T.</strong> designation.
+          Open to full-time roles in <strong>PLC programming, automation, controls engineering, field service, and maintenance</strong> — also happy to take on building-automation work where it fits. Comfortable with shift work, on-call rotations, and physical site work. On-site, hybrid, remote, or relocation across Canada all on the table. Working toward my <strong>OACETT C.E.T.</strong> designation.
         </p>
       </div>
       <aside class="quick-facts">
@@ -399,8 +400,7 @@
       </div>
       <div class="body">
         <div class="badges">
-          <span class="badge live">Capstone</span>
-          <span class="badge wip">Capping iter.</span>
+          <span class="badge live">Capstone Project</span>
           <span class="badge">2025</span>
         </div>
         <h3>Filling, Capping &amp; Sorting System</h3>
@@ -422,7 +422,7 @@
           <img src="assets/compactlogix-thumb.jpg" alt="CompactLogix Suite" loading="lazy" />
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">Allen-Bradley</span></div>
+          <div class="badges"><span class="badge">Allen-Bradley</span></div>
           <h3>CompactLogix Suite — Master/Slave</h3>
           <p>Ten labs in Studio 5000 — PID, FIFO/LIFO, AOIs, then a final master/slave system across two CompactLogix controllers communicating with produced/consumed tags over EtherNet/IP.</p>
           <div class="stack">Studio 5000 · CompactLogix 5380 · EtherNet/IP · PID · FIFO/LIFO</div>
@@ -435,7 +435,7 @@
           <img src="assets/tia-suite-thumb.jpg" alt="Siemens TIA Suite" loading="lazy" />
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">Siemens</span></div>
+          <div class="badges"><span class="badge">Siemens</span></div>
           <h3>Siemens TIA Suite</h3>
           <p>Four S7-based deliverables in one repo: washing machine cycle, multi-floor elevator, traffic light + pedestrian crosswalk on ET 200SP, and a Festo MPS station. Each with animated TIA Portal HMIs and VB scripts.</p>
           <div class="stack">TIA Portal · S7-1200/1500 · ET 200SP · HMI · VB · PROFINET</div>
@@ -450,7 +450,7 @@
           </video>
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">KUKA</span></div>
+          <div class="badges"><span class="badge">KUKA</span></div>
           <h3>KUKA Industrial Robotics</h3>
           <p>Two semesters of KUKA work — KRL on the pendant, WorkVisual on the laptop, PLC handshakes, and motion validated against an NX MCD digital twin. Includes a sub-mm Romer Absolute Arm calibration workflow.</p>
           <div class="stack">KRL · WorkVisual · NX MCD · Romer scan · PLC handshake</div>
@@ -465,7 +465,7 @@
           </video>
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">NX / MCD</span></div>
+          <div class="badges"><span class="badge">NX / MCD</span></div>
           <h3>NX Digital Twin &amp; Simulation</h3>
           <p>Festo MPS station modeled in NX MCD with sensor-aware physics, Tecnomatix material-flow simulation, and a Node-RED bridge that streams live cell data into the twin. Plus a real scan-to-engrave KUKA workflow.</p>
           <div class="stack">Siemens NX · MCD · Tecnomatix · Node-RED · KUKA</div>
@@ -478,7 +478,7 @@
           <img src="assets/proj_iot.jpg" alt="Node-RED dashboard on laptop next to capstone rig" loading="lazy" />
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">IoT</span></div>
+          <div class="badges"><span class="badge">IoT</span></div>
           <h3>Industrial IoT — Node-RED, MQTT, Modbus</h3>
           <p>Nine labs of industrial-IoT bridging — Node-RED dashboards, MQTT topic taxonomy, Modbus RTU/TCP integration, edge deployment on Raspberry Pi. Same pattern that drove the capstone dashboard.</p>
           <div class="stack">Node-RED · MQTT · Modbus RTU/TCP · Raspberry Pi · SQLite</div>
@@ -491,7 +491,7 @@
           <img src="assets/power-supply-thumb.jpg" alt="Variable-Voltage Power Supply" loading="lazy" />
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">PCB</span></div>
+          <div class="badges"><span class="badge">PCB</span></div>
           <h3>Variable-Voltage Power Supply</h3>
           <p>Built from scratch — schematic in PADS Logic, board in PADS Layout, etched in-house, populated, tested. LM317-based 0–24 V supply, code-compliant per ECP455 deliverable.</p>
           <div class="stack">PADS Logic · PADS Layout · LM317 · CSA / CEC · in-house etch</div>
@@ -504,7 +504,7 @@
           <img src="assets/process-control-thumb.jpg" alt="Process Control" loading="lazy" />
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">Process</span></div>
+          <div class="badges"><span class="badge">Process</span></div>
           <h3>Process Control — Pressure / Flow / Level / Temperature</h3>
           <p>Nine labs across the four core process variables. Closed-loop temperature control with Pt100 RTD, MATLAB FOPDT fit on step-response data, and PID tuned from Cohen-Coon.</p>
           <div class="stack">RTD Pt100 · PID · MATLAB · FOPDT · Cohen-Coon</div>
@@ -517,7 +517,7 @@
           <img src="assets/cnc-thumb.jpg" alt="CNC Manufacturing" loading="lazy" />
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">Manufacturing</span></div>
+          <div class="badges"><span class="badge">Manufacturing</span></div>
           <h3>CNC Manufacturing — Mastercam &amp; HAAS</h3>
           <p>CAM design from scratch in Mastercam, executed on HAAS mills. Plus manual lathe and milling — speeds, feeds, tolerances, materials. HAAS hands-on certified.</p>
           <div class="stack">Mastercam · HAAS Mill · Manual lathe · AL 6061-T6 · GD&amp;T</div>
@@ -530,7 +530,7 @@
           <img src="assets/pneumatics-thumb.jpg" alt="Pneumatics &amp; MPS" loading="lazy" />
         </div>
         <div class="body">
-          <div class="badges"><span class="badge live">Done</span><span class="badge">Pneumatics</span></div>
+          <div class="badges"><span class="badge">Pneumatics</span></div>
           <h3>Pneumatics &amp; MPS Troubleshooting</h3>
           <p>Festo pneumatic and electro-pneumatic circuits — timed press, sensor-gated cylinders, sequencing — plus disciplined live troubleshooting on MPS stations under exam conditions.</p>
           <div class="stack">Festo · Cylinders / valves · Limit switches · MPS · FluidSim</div>
@@ -577,7 +577,7 @@
       </div>
       <div class="cert">
         <div class="issuer">EPLAN</div>
-        <h4>Certified </h4>
+        <h4>Certified Student</h4>
         <div class="date">Electrical schematics</div>
       </div>
       <div class="cert">
@@ -593,7 +593,7 @@
       <div class="cert">
         <div class="issuer">WHMIS</div>
         <h4>Workplace Hazardous Materials</h4>
-        <div class="date">Required workplace certification</div>
+        <div class="date">Required workplace cert</div>
       </div>
       <div class="cert">
         <div class="issuer">OACETT</div>
@@ -623,7 +623,7 @@
         <a href="https://www.linkedin.com/in/harpreetsingh52004">linkedin.com/in/harpreetsingh52004</a>
       </div>
       <div class="contact-row">
-        <span class="label-inline">resume</span>
+        <span class="label-inline">résumé</span>
         <a href="resume.pdf" download>Download PDF</a>
       </div>
     </div>
@@ -633,14 +633,11 @@
 <footer>
   <div class="wrap">
     <div class="row">
-      <div>© <span id="year"></span> Harpreet Singh · Toronto, ON</div>
+      <div>© 2026 Harpreet Singh · Toronto, ON</div>
       <div>Built with HTML + CSS · Hosted on GitHub Pages</div>
     </div>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-</bod
+</body>
+</html>
