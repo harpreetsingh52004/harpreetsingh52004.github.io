@@ -4,8 +4,22 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Harpreet Singh — Automation & Controls Engineer</title>
-<meta name="description" content="Automation & Controls Engineering portfolio of Harpreet Singh — PLC, robotics, IoT, and digital-twin projects. Seneca Polytechnic graduate, Toronto." />
+<meta name="description" content="Automation & Controls portfolio of Harpreet Singh — PLC, robotics, IoT, and digital-twin projects. Seneca Polytechnic graduate, Toronto." />
 <meta name="theme-color" content="#0b0f14" />
+
+<!-- Social preview (Open Graph + Twitter) -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://harpreetsingh.cloud/" />
+<meta property="og:title" content="Harpreet Singh — Automation & Controls Engineer" />
+<meta property="og:description" content="PLC programming, robotics, and IoT — 10 hands-on projects from CLICK, Siemens, and Allen-Bradley PLCs to KUKA robots and digital twins. Toronto, open to opportunities." />
+<meta property="og:image" content="https://harpreetsingh.cloud/assets/capstone-thumb.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Harpreet Singh — Automation & Controls Engineer" />
+<meta name="twitter:description" content="PLC programming, robotics, and IoT — 10 hands-on projects. Toronto, open to opportunities." />
+<meta name="twitter:image" content="https://harpreetsingh.cloud/assets/capstone-thumb.jpg" />
+
+<!-- Favicon — inline SVG, no extra file needed -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b0f14'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='26' font-weight='bold' fill='%234cc9f0' text-anchor='middle'%3EHS%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -59,7 +73,19 @@
   .nav-links { display: flex; gap: 22px; }
   .nav-links a { color: var(--text-dim); font-size: 0.92rem; }
   .nav-links a:hover { color: var(--text); text-decoration: none; }
-  @media (max-width: 720px) { .nav-links { display: none; } }
+  .nav-toggle { display: none; background: none; border: 1px solid var(--border-strong); border-radius: 8px; color: var(--text); font-size: 1.2rem; line-height: 1; padding: 6px 11px; cursor: pointer; }
+  @media (max-width: 720px) {
+    .nav-links {
+      display: none;
+      position: absolute; top: 64px; left: 0; right: 0;
+      flex-direction: column; gap: 0;
+      background: var(--bg-elev);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 14px 24px; border-top: 1px solid var(--border); }
+    .nav-toggle { display: block; }
+  }
 
   /* HERO */
   header.hero { padding: 84px 0 64px; }
@@ -92,6 +118,24 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.95rem; color: var(--text-dim);
   }
+  .avail-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    margin-left: 14px; padding: 4px 12px;
+    background: rgba(0,212,163,0.08);
+    border: 1px solid rgba(0,212,163,0.35);
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.08em;
+    color: var(--accent-2); vertical-align: middle;
+    white-space: nowrap;
+  }
+  .avail-badge .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent-2);
+    box-shadow: 0 0 10px var(--accent-2);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @media (max-width: 500px) { .avail-badge { margin-left: 0; margin-top: 8px; display: inline-flex; } }
   .name-divider {
     width: 56px; height: 3px; border-radius: 2px;
     background: linear-gradient(90deg, var(--accent), var(--accent-2));
@@ -196,7 +240,6 @@
   }
   .project .body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
   .project .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
-  .project .badges .badge + .badge { margin-left: 0; }
   .project .badge {
     font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
     text-transform: uppercase; letter-spacing: 0.1em;
@@ -210,14 +253,6 @@
   .project .stack { font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.78rem; margin-bottom: 16px; }
   .project .links { display: flex; gap: 14px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.9rem; }
   .project.featured { border-color: var(--accent); }
-
-  /* FEATURED VIDEO */
-  .video-wrap {
-    position: relative; width: 100%; padding-top: 56.25%;
-    background: #000; overflow: hidden;
-    border-bottom: 1px solid var(--border);
-  }
-  .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
   /* CERTS */
   .cert-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
@@ -249,7 +284,8 @@
 <nav>
   <div class="wrap">
     <div class="brand"><span class="at">~/</span><span class="name">harpreetsingh</span></div>
-    <div class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="navLinks">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
@@ -265,15 +301,16 @@
       <span class="greeting"><span class="pulse"></span>Hi, I'm</span>
       <h2 class="name-display">Harpreet Singh</h2>
       <span class="name-role">Automation · Controls · Field Service · Toronto, ON</span>
+      <span class="avail-badge"><span class="dot"></span>OPEN TO WORK</span>
     </div>
     <div class="name-divider"></div>
     <h1>Programming, commissioning, and servicing <span class="accent">PLC, robotics, and IoT</span> systems.</h1>
     <p class="lede">
-      Electromechanical Engineering Technology (Automation) graduate from Seneca Polytechnic, based in Toronto. I program, commission, troubleshoot, and maintain PLC-driven systems — Allen-Bradley, Siemens, CLICK — across factory automation, robotics, and IoT, with additional training in building automation (BACnet, HVAC, DDC). Comfortable on the bench, on the panel, and in the field.
+      Electromechanical Engineering Technology (Automation) graduate from Seneca Polytechnic, based in Toronto. I program, commission, troubleshoot, and maintain PLC-driven systems — Allen-Bradley, Siemens, CLICK — across factory automation, robotics, and IoT. Comfortable on the bench, on the panel, and in the field.
     </p>
     <div class="cta-row">
       <a class="btn primary" href="#projects">View 10 projects</a>
-      <a class="btn" href="resume.pdf" download>Download resume</a>
+      <a class="btn" href="resume.pdf" download>Download résumé</a>
       <a class="btn" href="#contact">Get in touch</a>
     </div>
   </div>
@@ -287,13 +324,13 @@
     <div class="about">
       <div>
         <p>
-          I just finished my <strong>Electromechanical Engineering Technology — Automation</strong> Advanced diploma at Seneca Polytechnic. My capstone is a <strong>filling, capping, and sorting system</strong> driven by a CLICK PLC and monitored over MQTT through a Node-RED dashboard.
+          I just finished my <strong>Electromechanical Engineering Technology — Automation</strong> advanced diploma at Seneca Polytechnic. My capstone is a <strong>filling, capping, and sorting system</strong> driven by a CLICK PLC and monitored over MQTT through a Node-RED dashboard.
         </p>
         <p>
-          Across the program I worked with <strong>Allen-Bradley CompactLogix in Studio 5000</strong> (master/slave, PID, FIFO/LIFO), <strong>Siemens S7-1200/1500 in TIA Portal</strong> (washing machine, elevator, traffic light + pedestrian crosswalk, Festo MPS), <strong>KUKA robots in KRL + WorkVisual</strong>, and <strong>Siemens NX with MCD</strong> for digital-twin validation. I designed and etched a custom <strong>variable-voltage power supply PCB</strong> in PADS, machined parts on <strong>HAAS mills with Mastercam</strong>, and built <strong>Node-RED + MQTT + Modbus</strong> bridges. I'm also trained in <strong>BACnet, HVAC controls (AHU/VAV/DDC), and Kantech access control</strong>, and I currently work shift-based monitoring at a commercial security operations role.
+          Across the program I worked with <strong>Allen-Bradley CompactLogix in Studio 5000</strong> (master/slave, PID, FIFO/LIFO), <strong>Siemens S7-1200/1500 in TIA Portal</strong> (washing machine, elevator, traffic light + pedestrian crosswalk, Festo MPS), <strong>KUKA robots in KRL + WorkVisual</strong>, and <strong>Siemens NX with MCD</strong> for digital-twin validation. I designed and etched a custom <strong>variable-voltage power supply PCB</strong> in PADS, machined parts on <strong>HAAS mills with Mastercam</strong>, and built <strong>Node-RED + MQTT + Modbus</strong> bridges. Alongside the job hunt I work shift-based monitoring of building and security systems at commercial facilities — real-world alarm response, service records, and coordination under time pressure.
         </p>
         <p>
-          Open to full-time roles in <strong>PLC programming, automation, controls engineering, field service, and maintenance</strong> — also happy to take on building-automation work where it fits. Comfortable with shift work, on-call rotations, and physical site work. On-site, hybrid, remote, or relocation across Canada all on the table. Working toward my <strong>OACETT C.E.T.</strong> designation.
+          Open to full-time roles in <strong>PLC programming, automation, controls engineering, field service, and maintenance</strong>. Comfortable with shift work, on-call rotations, and physical site work. On-site, hybrid, remote, or relocation across Canada all on the table. Working toward my <strong>OACETT C.E.T.</strong> designation.
         </p>
       </div>
       <aside class="quick-facts">
@@ -608,7 +645,7 @@
   <div class="wrap">
     <div class="label">Get in touch</div>
     <h2>Let's talk automation.</h2>
-    <p class="sub">Best way to reach me is email — happy to chat about controls, field service, building automation, or anything in between.</p>
+    <p class="sub">Best way to reach me is email — happy to chat about controls, automation, field service, or anything in between.</p>
     <div class="contact-grid">
       <div class="contact-row">
         <span class="label-inline">email</span>
@@ -623,7 +660,7 @@
         <a href="https://www.linkedin.com/in/harpreetsingh52004">linkedin.com/in/harpreetsingh52004</a>
       </div>
       <div class="contact-row">
-        <span class="label-inline">resume</span>
+        <span class="label-inline">résumé</span>
         <a href="resume.pdf" download>Download PDF</a>
       </div>
     </div>
@@ -638,6 +675,15 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Close mobile menu after tapping a link
+  document.querySelectorAll('#navLinks a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.getElementById('navLinks').classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>
